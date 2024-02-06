@@ -8,39 +8,40 @@ import "./assets/img/4geeks.ico";
 window.onload = function() {};
 
 let playGame = () => {
-  let gameStart = prompt(
+  let playerPick = prompt(
     "Esto empieza, elige: Piedra, papel, tijeras, lagarto, Spock"
   ).toLowerCase();
   const options = ["piedra", "papel", "tijeras", "lagarto", "Spock"];
 
   let gamePick = options[Math.floor(Math.random() * options.length)];
+  console.log(`Tijeratron ha elegido: ${gamePick}`);
 
   if (
-    gameStart === "tijeras" &&
+    playerPick === "tijeras" &&
     (gamePick === "papel" || gamePick === "lagarto")
   ) {
     console.log("Has ganado.");
   } else if (
-    gameStart === "papel" &&
+    playerPick === "papel" &&
     (gamePick === "piedra" || gamePick === "spock")
   ) {
     console.log("Has ganado.");
   } else if (
-    gameStart === "piedra" &&
+    playerPick === "piedra" &&
     (gamePick === "lagarto" || gamePick === "tijeras")
   ) {
     console.log("Has ganado.");
   } else if (
-    gameStart === "lagarto" &&
+    playerPick === "lagarto" &&
     (gamePick === "spock" || gamePick === "papel")
   ) {
     console.log("Has ganado.");
   } else if (
-    gameStart === "spock" &&
+    playerPick === "spock" &&
     (gamePick === "tijeras" || gamePick === "piedra")
   ) {
     console.log("Has ganado.");
-  } else if (gameStart === gamePick) {
+  } else if (playerPick === gamePick) {
     console.log("Empate");
   } else console.log("Has perdido");
 };
